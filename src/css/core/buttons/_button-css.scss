@@ -1,0 +1,9 @@
+//
+// Css buttons
+//
+// Color variations
+@each $color, $value in $css-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
