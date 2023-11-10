@@ -9,6 +9,7 @@
 
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
+import { commonError } from "./pages/common/commonError";
 const isLocalhost = Boolean(
   window.location.hostname === "localhost" ||
     // [::1] is the IPv6 localhost address.
@@ -86,7 +87,7 @@ function registerValidSW(swUrl: string, config?: Config) {
       };
     })
     .catch((error) => {
-       console.log('eroor');
+      commonError(error.response.STATUS, "SERVICEWORK");
     });
 }
 
@@ -112,7 +113,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
       }
     })
     .catch((error) => {
-      console.log('eroor');
+      commonError(error.response.STATUS, "SERVICEWORK");
     });
 }
 

@@ -1,6 +1,7 @@
 import axios from "axios";
-import {  Relation } from "../types/Iuser";
+import { iHUBUser, Relation } from "../types/Iuser";
 import store from "../store";
+import { commonError } from "../pages/common/commonError";
 export default function getCustomers(email: string) {
   var customers: Array<Relation> = [];
   //var email = "katarina.stubberud@cssregtech.com";
@@ -19,7 +20,29 @@ export default function getCustomers(email: string) {
       return customers;
     })
     .catch((err) => {
-      console.log("error ")
+      commonError(err.response.status, "ISLOGIN");
+    });
+}
+
+export function getUser(email: string) {
+  var user: iHUBUser;
+  //var email = "katarina.stubberud@cssregtech.com";
+  // var url=process.env.REACT_APP_FIND_BY_TYPE ? process.env.REACT_APP_FIND_BY_TYPE:'';
+  var url = process.env.REACT_APP_USER_GROUP_SERVICE + "findByEmail";
+  let payload: any = { email: email };
+  const params: any = new URLSearchParams(payload);
+  return axios
+    .get(url + "?" + params, {
+      headers: {
+        Authorization: "Bearer " + store.getState().auth.sessionId,
+      },
+    })
+    .then((res) => {
+      user = res.data;
+      return user;
+    })
+    .catch((err) => {
+      commonError(err.response.status, "ISLOGIN");
     });
 }
 
@@ -35,6 +58,6 @@ export function getUserSettings() {
       return res.data;
     })
     .catch((err) => {
-      console.log("error ")
+      commonError(err.response.status, "GETTINGUSERSETTING");
     });
 }

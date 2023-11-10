@@ -6,7 +6,6 @@ export enum AuthActionTypes {
   IDPLOGIN = "@auth/IDP_LOGIN",
   IDPLOGOUT = "@auth/IDP_LOGOUT",
   TIMEZONECHANGE = "@auth/TIMEZONECHANGE",
-  LOGIN_FAILURE = "LOGIN_FAILURE"
 }
 
 export interface AuthState {
