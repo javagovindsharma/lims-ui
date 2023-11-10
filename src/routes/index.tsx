@@ -2,8 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Navigate,
+  Routes
 } from "react-router-dom";
 import { PrivateRoute, PublicRoute } from "./RouteUtils";
 import { CustomRoutes } from "./RouteTypes";
@@ -17,7 +16,7 @@ export default () => {
   return (
     <Router>
       <Routes>
-        <Route path={CustomRoutes.DEFAULT.path} element={<Home />} />
+        <Route path={CustomRoutes.DEFAULT.path} element={<Login />} />
         <Route path={CustomRoutes.ERROR.path} element={<Error />} />
         <Route path="/login" element={<Login />} />
         <Route
