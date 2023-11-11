@@ -110,51 +110,6 @@ export default function UserNavigationBar() {
            >
               LIMS{" "}
            </Navbar.Brand>
-
-           <ul className="nav nav-tabs">
-              <li className="nav-item">
-                 <span className="nav-link">
-                    <NavLink className="nav-item" to="/alltxns">
-                       All Transactions
-                    </NavLink>
-                 </span>
-              </li>{" "}
-              <li className="nav-item">
-                 <span className="nav-link">
-                    <NavLink className="nav-item" to="/history">
-                       History
-                    </NavLink>
-                 </span>
-              </li>{" "}
-              <li className="nav-item">
-                 <span className="nav-link">
-                    <NavLink className="nav-item" to="/upload">
-                       All Upload
-                    </NavLink>
-                 </span>
-              </li>{" "}
-              <li className="nav-item">
-                 <span className="nav-link">
-                    <NavLink className="nav-item" to="/bonds">
-                       Bond
-                    </NavLink>
-                 </span>
-              </li>{" "}
-              <li className="nav-item">
-                 <span className="nav-link">
-                    <NavLink className="nav-item" to="/equity">
-                       Equity
-                    </NavLink>
-                 </span>
-              </li>{" "}
-              <li className="nav-item">
-                 <span className="nav-link">
-                    <NavLink className="nav-item" to="/future">
-                       Future
-                    </NavLink>
-                 </span>
-              </li>{" "}
-           </ul>
            <ul className="nav nav-tabs">
               <li className="nav-item dropdown mt-1">
                  <a
@@ -206,9 +161,3 @@ export default function UserNavigationBar() {
      </Styles>
   );
 }
-
-/*
-  <Form className="form-center">
-        <FormControl type="text" placeholder="Search" className="" />
-      </Form>
-*/
