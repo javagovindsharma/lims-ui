@@ -3,7 +3,6 @@ import React from "react";
 import { Navbar } from "react-bootstrap";
 import styled from "styled-components";
 import { NavLink, useHistory } from "react-router-dom";
-import { UserUtils } from "../../lib/authenticationUtils";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../store";
 import { logout } from "../../store/authentication/actions";
@@ -85,60 +84,17 @@ export default function AdminNavigationBar() {
         <ul className="nav nav-tabs">
           <li className="nav-item">
             <span className="nav-link">
-              <NavLink className="nav-item" to={CustomRoutes.STATIC.path}>
-                Static Data
-              </NavLink>
-            </span>
-          </li>{" "}
-          <li className="nav-item">
-            <span className="nav-link">
               <NavLink
                 className="nav-item"
-                to={CustomRoutes.CONFIGURATION.path}
+                to={CustomRoutes.EMPLOYEE.path}
               >
-                Import Configuration
+                Employe Master
               </NavLink>
             </span>
           </li>{" "}
-          <li className="nav-item">
-            <span className="nav-link">
-              <NavLink
-                className="nav-item"
-                to={CustomRoutes.EXPORT_CONFIG.path}
-              >
-                Export Configuration
-              </NavLink>
-            </span>
-          </li>{" "}
-          <li className="nav-item">
-            <span className="nav-link">
-              <NavLink className="nav-item" to="/admin/logs">
-                Logs
-              </NavLink>
-            </span>
-          </li>{" "}
-          <li className="nav-item">
-            <span className="nav-link">
-              <NavLink className="nav-item" to="/admin/sdr">
-                Static Data Request
-              </NavLink>
-            </span>
-          </li>{" "}
-          <li className="nav-item">
-            <span className="nav-link">
-              <NavLink className="nav-item" to="/admin/users">
-                Users & Groups
-              </NavLink>
-            </span>
-          </li>
+          
         </ul>
       </Navbar>
     </Styles>
   );
 }
-
-/*
-  <Form className="form-center">
-        <FormControl type="text" placeholder="Search" className="" />
-      </Form>
-*/
